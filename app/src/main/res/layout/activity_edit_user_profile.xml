@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".edit_user_profile_Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rectangle_toolbar">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit User"
+                    android:layout_centerInParent="true"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/back_edit_user"
+                    android:paddingLeft="15dp"/>
+
+            </RelativeLayout>
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/editPhoto_user"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/user"
+                app:c_background_color="@color/grey1"
+                android:layout_gravity="center"
+                app:c_border="true"
+                app:c_border_color="#4A97E4"
+                app:c_border_width="5.5dp"
+                app:c_shadow="true"
+                app:c_shadow_color="#000"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:c_shadow_gravity="end"
+                app:c_shadow_radius="5.5" />
+
+            <EditText
+                android:id="@+id/Name_edit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:hint="Name"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="4dp"
+                android:background="@drawable/rectangle_box"
+                android:inputType="textPersonName"
+
+                android:textColorHint="@color/black"
+                />
+
+            <EditText
+                android:id="@+id/pno_edit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/rectangle_box"
+                android:drawableStart="@drawable/ic_baseline_phone_24"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="4dp"
+                android:hint="Phone"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"
+                android:inputType="phone"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/black" />
+
+            <EditText
+                android:id="@+id/Country_edit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="4dp"
+                android:textColor="@color/black"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:hint="Country"
+                android:background="@drawable/rectangle_box"
+                android:inputType="textPersonName"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/black"
+                />
+            <EditText
+                android:id="@+id/state_edit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="4dp"
+                android:textColor="@color/black"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:hint="State"
+                android:background="@drawable/rectangle_box"
+                android:inputType="textPersonName"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/black"
+                />
+            <EditText
+                android:id="@+id/city_edit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="4dp"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:hint="City"
+                android:background="@drawable/rectangle_box"
+                android:inputType="textPersonName"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                />
+
+
+
+            <EditText
+                android:id="@+id/address_edit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:hint="address"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="4dp"
+                android:background="@drawable/rectangle_box"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/black"
+                />
+
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_btn"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true"
+                android:text="Update"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:background="@drawable/rectangle_toolbar"-->
+    <!--        android:paddingTop="10dp"-->
+    <!--        android:text="Register User"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="25dp" />-->
+
+
+
+
+</LinearLayout>

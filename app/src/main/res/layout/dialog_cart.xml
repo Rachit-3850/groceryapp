@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ORDER TO"
+            android:id="@+id/heading_cart"
+            android:textAlignment="center"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ORDER TO"
+            android:id="@+id/orderTo_cart"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/card_cart_items"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:id="@+id/recycleView_cart"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sub Total :"
+            android:id="@+id/subTotal_cart"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Rs 50"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:paddingRight="20dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/subTotal_price_cart"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery Fee :"
+            android:id="@+id/deliveryfee_cart"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Rs 50"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:paddingRight="20dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/delivery_price_cart"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Price :"
+            android:id="@+id/total_cart"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/total_price_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:paddingRight="20dp"
+            android:text="Rs 50"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_cart_placeOrder"
+        android:layout_height="wrap_content"
+        android:text="Place Order"
+        android:textColor="@color/white"/>
+
+
+
+
+
+
+
+</LinearLayout>
