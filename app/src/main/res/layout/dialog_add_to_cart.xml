@@ -65,12 +65,12 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/price_addtocart_user"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Rs 20"
             android:textAlignment="center"
@@ -83,7 +83,7 @@
         <TextView
             android:id="@+id/discountPrice_addtocart_user"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Rs 15"
             android:textAlignment="center"
@@ -95,7 +95,7 @@
         <TextView
             android:id="@+id/blank_addtcart_user"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_weight="10"
             android:textAlignment="center"
@@ -107,7 +107,7 @@
         <TextView
             android:id="@+id/finalPrice_addtocart_user"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="final price"
             android:layout_weight="2"

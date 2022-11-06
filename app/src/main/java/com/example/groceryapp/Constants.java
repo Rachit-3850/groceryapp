@@ -7,9 +7,8 @@ public class Constants {
             "Biscuits Snacks & Chocolates",
             "BreakFast & dairy",
             "Cooking Needs",
-            "Frozen Food",
             "Fruits",
-            "Pet Cate",
+            "Electronics",
             "Pharmacy",
             "Vegetables",
             "others"
@@ -21,9 +20,8 @@ public class Constants {
             "Biscuits Snacks & Chocolates",
             "BreakFast & dairy",
             "Cooking Needs",
-            "Frozen Food",
             "Fruits",
-            "Pet Cate",
+            "Electronics",
             "Pharmacy",
             "Vegetables",
             "others"

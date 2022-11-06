@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:backgroundTint="@color/white"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/id_card_placedOrder_seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp"
+                android:text="Title"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="26/10/2022"
+                android:layout_alignParentRight="true"
+                android:id="@+id/date_card_placedOrder_seller"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="20dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/grey2"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email"
+                android:id="@+id/email_card_placedOrder_seller"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="20dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/grey2"
+                android:textSize="15dp" />
+
+            <ImageView
+                android:id="@+id/forward_card_placedOrder_seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="total price"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/totalPrice_card_placedOrder_seller"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="20dp"
+                android:textColor="@color/grey2"
+                android:textSize="15dp" />
+
+
+
+
+            <TextView
+                android:id="@+id/status_card_placedOrder_seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp"
+                android:text="In Progress"
+                android:textAlignment="center"
+                android:textColor="#4CAF50"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:src="@color/grey1"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -40,10 +40,10 @@
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_edit_user_profile.xml" value="0.2" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_main_seller.xml" value="0.1" />
+        <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_main_seller.xml" value="0.2" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_order_details.xml" value="0.1699909338168631" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_register.xml" value="0.264" />
-        <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_register_seller.xml" value="0.10860655737704918" />
+        <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_register_seller.xml" value="0.2" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_shop_details.xml" value="0.4" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_splash.xml" value="0.25" />
@@ -55,6 +55,7 @@
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/edit_product_details.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/fragment_orders.xml" value="0.1936725096194955" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/fragment_product.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/orders_seller_card.xml" value="0.20436083796494228" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/product_design_card.xml" value="0.4" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/shop_design_card.xml" value="0.4" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/user_product_design_card.xml" value="0.3855421686746988" />

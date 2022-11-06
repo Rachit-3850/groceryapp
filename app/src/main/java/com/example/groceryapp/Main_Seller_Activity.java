@@ -36,12 +36,12 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class Main_Seller_Activity extends AppCompatActivity {
-    private TextView main_heading , shopName , address , products , orders  ;
+    private TextView main_heading , shopName , address , products , orders ,filterNoteOrders ,filterNoteProducts;
     private ImageView logout_btn , addProduct;
     private ImageView editP;
-    ImageButton btn;
+    ImageButton btn , orderbtn;
     EditText search;
-    RecyclerView productRV;
+    RecyclerView productRV, ordersRV;
     LinearLayout  product , order;
     CircularImageView circularImageView;
 
@@ -51,6 +51,9 @@ public class Main_Seller_Activity extends AppCompatActivity {
 
     private ArrayList<ModelProduct> productList;
     private adapterRecycleSeller adapterRecycleSeller;
+
+    private ArrayList<ModelOrderSeller> ordersList;
+    AdapterConfirmOrdersSeller adapterConfirmOrdersSeller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,10 @@ public class Main_Seller_Activity extends AppCompatActivity {
         search = findViewById(R.id.product_search);
         btn = findViewById(R.id.filter_btn_product);
         circularImageView = findViewById(R.id.seller_profile_main);
+        orderbtn = findViewById(R.id.orders_filter_seller);
+        ordersRV = findViewById(R.id.recycleView_orders);
+        filterNoteOrders = findViewById(R.id.orders_show_seller);
+        filterNoteProducts = findViewById(R.id.filter_product_text);
 
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +94,7 @@ public class Main_Seller_Activity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         checkUser();
         loadAllProducts();
+        loadAllOrders();
 
         showProductUI();
 
@@ -151,15 +159,18 @@ public class Main_Seller_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Main_Seller_Activity.this);
-                builder.setItems(Constants.options2, new DialogInterface.OnClickListener() {
+                builder.setTitle("Filter Products")
+                        .setItems(Constants.options2, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String selected = Constants.options2[i];
                         Log.d("message", "onClick: "+selected);
                         if(selected.equals("All")) {
+                            filterNoteProducts.setText("Showing All Products");
                             loadAllProducts();
                         }
                         else {
+                            filterNoteProducts.setText("Showing Products : "+ selected);
                             loadFilterProducts(selected);
                         }
                     }
@@ -167,7 +178,71 @@ public class Main_Seller_Activity extends AppCompatActivity {
                         .show();
             }
         });
+        orderbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(Main_Seller_Activity.this);
+                String options[] = {"All" , "In Progress","Completed","Cancelled"};
+                builder.setTitle("Filter Orders")
+                    .setItems(options, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String selected = options[i];
+                        if(selected.equals("All")) {
+                            filterNoteOrders.setText("Showing All Status");
+                            adapterConfirmOrdersSeller.getFilter().filter("");
+                        }
+                        else {
+                            filterNoteOrders.setText("Showing Status : "+selected);
+                            adapterConfirmOrdersSeller.getFilter().filter(selected);
 
+                        }
+                    }
+                })
+                        .show();
+            }
+        });
+
+    }
+
+    private void leadFilterOrders() {
+    }
+
+    private void loadAllOrders() {
+        ordersList = new ArrayList<>();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+        ref.child(firebaseAuth.getUid()).child("Orders")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        ordersList.clear();
+                        for(DataSnapshot ds : snapshot.getChildren()) {
+//                            ModelOrderSeller modelOrderSeller = ds.getValue(ModelOrderSeller.class);
+                            String orderIdo = ""+ ds.child("orderId").getValue();
+                            String orderByo = ""+ ds.child("orderBy").getValue();
+                            String orderToo = ""+ ds.child("orderTo").getValue();
+                            String orderCosto = ""+ ds.child("orderCost").getValue();
+                            String orderStatuso = ""+ ds.child("orderStatus").getValue();
+                            String orderTimeo = ""+ ds.child("orderTime").getValue();
+
+                            ModelOrderSeller modelOrderSeller = new ModelOrderSeller(orderIdo , orderTimeo , orderStatuso,orderCosto,orderByo,orderToo,df);
+
+                            ordersList.add(modelOrderSeller);
+                        }
+                        Log.d("ordersSeller", "onDataChange: "+ordersList.size());
+                        //setup adapter
+                        ordersRV.setLayoutManager(new LinearLayoutManager(Main_Seller_Activity.this
+                        ));
+                        adapterConfirmOrdersSeller =  new AdapterConfirmOrdersSeller(Main_Seller_Activity.this,ordersList);
+                        //set adapter
+                        ordersRV.setAdapter(adapterConfirmOrdersSeller);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
     }
 
     private void loadAllProducts() {
@@ -285,7 +360,7 @@ public class Main_Seller_Activity extends AppCompatActivity {
         }
 
     }
-
+    String df;
     private void loadMyInfo() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
         ref.orderByChild("uid").equalTo(firebaseAuth.getUid())
@@ -298,6 +373,7 @@ public class Main_Seller_Activity extends AppCompatActivity {
                             String addr = ""+ds.child("address").getValue();
                             String accountType = ""+ds.child("accountType").getValue();
                             String icon = ""+ds.child("icon").getValue();
+                            String df = ""+ds.child("deleveryfee").getValue();
 
                             try {
                                 Picasso.get().load(icon).placeholder(R.drawable.user).into(circularImageView);

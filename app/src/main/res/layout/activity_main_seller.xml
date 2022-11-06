@@ -134,7 +134,7 @@
 <!--    products-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/products_layout_seller"
         android:orientation="vertical"
         >
@@ -185,11 +185,44 @@
 <!--orders-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/orders_layout_seller"
         android:orientation="vertical"
         >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textColorHint="@color/grey2"
+                android:background="@drawable/rectangle_box"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:text="Showing all orders"
+                android:id="@+id/orders_show_seller"
+                android:layout_weight="5"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"/>
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="5dp"
+                android:id="@+id/orders_filter_seller"
+                android:src="@drawable/ic_baseline_filter_24" />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey2"
+            app:reverseLayout="true"
+            app:stackFromEnd="true"
+            android:id="@+id/recycleView_orders" />
     </LinearLayout>
+
 
 </LinearLayout>
