@@ -1,6 +1,7 @@
 package com.example.groceryapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.util.Log;
@@ -85,6 +86,10 @@ public class AdapterConfirmOrdersSeller extends RecyclerView.Adapter<AdapterConf
             @Override
             public void onClick(View view) {
                 //details
+                Intent intent = new Intent(context,OrdersDetailsSellerActivity.class);
+                intent.putExtra("orderId",orderId);//to load order info
+                intent.putExtra("orderBy" , orderBy);//to load info of the user who placed order
+                context.startActivity(intent);
             }
         });
     }
