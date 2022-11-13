@@ -12,6 +12,7 @@
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1745" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.19" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_discount_24.xml" value="0.19" />
+        <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_done_24.xml" value="0.1915" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2185" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.182" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_exposure_neg_1_24.xml" value="0.222" />
@@ -22,6 +23,7 @@
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.1745" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.182" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.182" />
+        <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_rate_review_24.xml" value="0.168" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1935" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.136" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/drawable/ic_baseline_store_24.xml" value="0.2265" />
@@ -46,6 +48,7 @@
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_register_seller.xml" value="0.2" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
+        <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_review_shops.xml" value="0.264" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_shop_details.xml" value="0.4" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/Users/rachi/AndroidStudioProjects/groceryApp/app/src/main/res/layout/card_cart_items.xml" value="0.4485049833887043" />

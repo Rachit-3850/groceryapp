@@ -30,6 +30,16 @@
                 android:id="@+id/back_confirm_user"
                 android:paddingLeft="15dp"/>
 
+        <ImageView
+            android:id="@+id/review_confirm_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="15dp"
+            android:src="@drawable/ic_baseline_rate_review_24" />
+
+
         </RelativeLayout>
 
     <androidx.cardview.widget.CardView

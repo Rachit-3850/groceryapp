@@ -28,7 +28,7 @@ import java.util.Calendar;
 
 public class order_Details_Activity extends AppCompatActivity {
     String orderID ,  orderTo;
-    ImageView back;
+    ImageView back , riview;
     TextView orderId , date , address , amount , shopName , fee , status;
     RecyclerView orderRV;
 
@@ -55,6 +55,7 @@ public class order_Details_Activity extends AppCompatActivity {
         status = findViewById(R.id.status_confirm_value);
         back = findViewById(R.id.back_confirm_user);
         orderRV = findViewById(R.id.ordered_confirm_RV);
+        riview = findViewById(R.id.review_confirm_user);
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -74,6 +75,15 @@ public class order_Details_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+        riview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(order_Details_Activity.this , review_shops_Activity.class);
+                intent1.putExtra("shopUID" , orderTo);
+                startActivity(intent1);
             }
         });
 

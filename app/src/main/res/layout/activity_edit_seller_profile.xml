@@ -49,14 +49,12 @@
                 android:id="@+id/editPhoto_seller"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:src="@drawable/user"
-                app:c_background_color="@color/grey1"
+
+                android:src="@drawable/ic_baseline_store_24"
+                app:c_background_color="@color/grey2"
                 android:layout_gravity="center"
-                app:c_border="true"
-                app:c_border_color="#4A97E4"
-                app:c_border_width="5.5dp"
-                app:c_shadow="true"
-                app:c_shadow_color="#000"
+
+
                 android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="10dp"
                 app:c_shadow_gravity="end"
