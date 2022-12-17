@@ -1,10 +1,13 @@
 package com.example.groceryapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -37,6 +40,7 @@ public class Main_user_Activity extends AppCompatActivity {
     LinearLayout shop , order;
 //    user_profile_main
     CircularImageView circularImageView;
+
     ArrayList<ModelShop> shopList;
     adapterRecycleUser adapterRecycleUser;
 
@@ -65,8 +69,22 @@ public class Main_user_Activity extends AppCompatActivity {
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firebaseAuth.signOut();
-                checkUser();
+                AlertDialog.Builder builder = new AlertDialog.Builder(Main_user_Activity.this);
+                builder.setMessage("Are you sure you want to logout?")
+                                .setPositiveButton("logout", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        firebaseAuth.signOut();
+                                        checkUser();
+                                    }
+                                })
+                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        }).show();
+
             }
         });
 

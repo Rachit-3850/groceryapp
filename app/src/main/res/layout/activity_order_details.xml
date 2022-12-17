@@ -225,12 +225,11 @@
                     android:textSize="15dp" />
 
             </TableRow>
-            <TableRow
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:orientation="horizontal">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -243,29 +242,17 @@
                     android:textSize="15dp" />
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="OrderID : "
-                        android:layout_centerInParent="true"
-                        android:autoSizeTextType="uniform"
-                        android:layout_marginLeft="20dp"
-                        android:id="@+id/address_confirm_value"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OrderID : "
+                    android:layout_centerInParent="true"
+                    android:autoSizeTextType="uniform"
+                    android:id="@+id/address_confirm_value"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-<!--                <TextView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="OrderID : "-->
-<!--                    android:layout_centerInParent="true"-->
-<!--                    android:autoSizeTextType="uniform"-->
-<!--                    android:layout_marginLeft="20dp"-->
-<!--                    android:id="@+id/address_confirm_value"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="15dp" />-->
-
-            </TableRow>
+            </LinearLayout>
         </TableLayout>
     </androidx.cardview.widget.CardView>
 

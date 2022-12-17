@@ -42,232 +42,255 @@
 
     </RelativeLayout>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        app:cardBackgroundColor="@color/white"
-        app:cardElevation="3dp"
-        app:contentPadding="5dp"
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <TableLayout
-            android:layout_width="wrap_content"
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="3dp"
+            app:contentPadding="5dp"
             android:layout_height="wrap_content">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:orientation="horizontal">
-
-                <TextView
+                <TableRow
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OrderID : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/orderID_confirm"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
 
-                <TextView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OrderID : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/orderID_confirm"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OrderID : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/orderID_confirm_value_seller"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                </TableRow>
+
+                <TableRow
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OrderID : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/orderID_confirm_value_seller"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
 
-            </TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order Status : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/status_confirm"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="In Progress"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/status_confirm_value_seller"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
 
-                <TextView
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/date_confirm"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="OrderID : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/date_confirm_value_seller"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                </TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buyer Email : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/shopName_confirm"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OrderID : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="23dp"
+                        android:id="@+id/email_confirm_value_seller"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+
+
+<!--                <TableRow-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginVertical="10dp"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--&lt;!&ndash;                    <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="Buyer Email : "&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_centerInParent="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/shopName_confirm"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="15dp" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:text="OrderID : "&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_centerInParent="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/email_confirm_value_seller"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textColor="@color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:textSize="15dp" />&ndash;&gt;-->
+
+<!--                </TableRow>-->
+
+                <TableRow
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Order Status : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/status_confirm"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
 
-                <TextView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="phone no : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/items_confirm"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OrderID : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/phoneNo_confirm_value_seller"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                </TableRow>
+                <TableRow
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="In Progress"
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/status_confirm_value_seller"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
 
-            </TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/amount_confirm"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OrderID : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/amount_confirm_value_seller"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                </TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Date : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/date_confirm"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OrderID : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/date_confirm_value_seller"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Buyer Email : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/shopName_confirm"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OrderID : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/email_confirm_value_seller"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="phone no : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/items_confirm"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OrderID : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/phoneNo_confirm_value_seller"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </TableRow>
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Amount : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/amount_confirm"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OrderID : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/amount_confirm_value_seller"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </TableRow>
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Delivery Address : "
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/address_confirm"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery Address : "
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:id="@+id/address_confirm"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OrderID : "
-                    android:layout_centerInParent="true"
-                    android:autoSizeTextType="uniform"
-                    android:layout_marginLeft="20dp"
-                    android:id="@+id/address_confirm_value_seller"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OrderID : "
+                        android:layout_centerInParent="true"
+                        android:autoSizeTextType="uniform"
+                        android:id="@+id/address_confirm_value_seller"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
 
-                <!--                <TextView-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:text="OrderID : "-->
-                <!--                    android:layout_centerInParent="true"-->
-                <!--                    android:autoSizeTextType="uniform"-->
-                <!--                    android:layout_marginLeft="20dp"-->
-                <!--                    android:id="@+id/address_confirm_value"-->
-                <!--                    android:textColor="@color/black"-->
-                <!--                    android:textSize="15dp" />-->
+                </LinearLayout>
+            </TableLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
 
-            </TableRow>
-        </TableLayout>
-    </androidx.cardview.widget.CardView>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

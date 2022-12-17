@@ -11,8 +11,14 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -33,13 +39,14 @@ public class adapterRecycleUser extends RecyclerView.Adapter<adapterRecycleUser.
         View view = LayoutInflater.from(context).inflate(R.layout.shop_design_card,parent,false);
         return new holderShop(view);
     }
-
+    String shopUID;
     @Override
     public void onBindViewHolder(@NonNull holderShop holder, int position) {
         // get data
         ModelShop modelShop = shopList.get(position);
 //
         String suid = modelShop.getUid();
+        shopUID = suid;
 //        String scity = modelShop.getCity();
 //        String sstate = modelShop.getState();
 //        String sdeleveryfee = modelShop.getDeleveryfee();
@@ -60,6 +67,7 @@ public class adapterRecycleUser extends RecyclerView.Adapter<adapterRecycleUser.
         holder.phoneNo.setText(sphoneNo);
         holder.address.setText(saddress);
         holder.title.setText(sshopName);
+        setReview(holder);
 
         try {
             Picasso.get().load(sicon).placeholder(R.drawable.ic_baseline_store_24).into(holder.icon);
@@ -85,6 +93,36 @@ public class adapterRecycleUser extends RecyclerView.Adapter<adapterRecycleUser.
             }
         });
     }
+
+    private void setReview(holderShop holder) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+        ref.child(shopUID).child("Ratings")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        ratingSum = 0;
+                        for(DataSnapshot ds : snapshot.getChildren()) {
+                            double rate = Double.parseDouble(""+ds.child("rating").getValue());
+                            ratingSum = ratingSum + rate;
+
+                        }
+
+                        long noOfReviews = snapshot.getChildrenCount();
+                        Log.d("reviews", "onDataChange: "+noOfReviews);
+                        double avgRating = ratingSum / noOfReviews;
+                        holder.rating.setRating((float)avgRating);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+    }
+
+    double ratingSum = 0;
+
 
     @Override
     public int getItemCount() {
