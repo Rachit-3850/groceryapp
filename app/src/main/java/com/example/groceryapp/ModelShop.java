@@ -4,6 +4,7 @@ public class ModelShop {
     public String uid , fullName , email ,address , country , city , state , phoneNo , shopName , deleveryfee,accountType,online,shopOpen,icon;
 
     public ModelShop() {
+
     }
 
     public ModelShop(String uid, String fullName, String email, String address, String country, String city, String state, String phoneNo, String shopName, String deleveryfee, String accountType, String online, String shopOpen , String icon) {

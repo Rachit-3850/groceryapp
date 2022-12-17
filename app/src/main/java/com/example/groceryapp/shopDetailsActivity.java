@@ -42,7 +42,7 @@ import p32929.androideasysql_library.EasyDB;
 
 public class shopDetailsActivity extends AppCompatActivity {
     TextView  email, phoneNo ,deliveryFee,shopName , shopOpen , address , count;
-    ImageView back , icon , call,cart;
+    ImageView back , icon , call,cart , star;
     ImageButton btn;
     EditText search;
     RecyclerView shopDetailsRV;
@@ -76,6 +76,7 @@ public class shopDetailsActivity extends AppCompatActivity {
         call = findViewById(R.id.call_shop);
         cart = findViewById(R.id.cart_shop_details_user);
         count = findViewById(R.id.cart_shop_details_count);
+        star = findViewById(R.id.star_shop_details_user);
 
         shopUID = getIntent().getStringExtra("shopId");
 
@@ -150,6 +151,14 @@ public class shopDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 cartDialog();
+            }
+        });
+        star.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent  = new Intent(shopDetailsActivity.this , shop_riview_Activity.class);
+                intent.putExtra("shopUID" , shopUID);
+                startActivity(intent);
             }
         });
     }

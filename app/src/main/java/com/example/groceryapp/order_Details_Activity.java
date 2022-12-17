@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 
 public class order_Details_Activity extends AppCompatActivity {
     String orderID ,  orderTo;
@@ -159,11 +160,13 @@ public class order_Details_Activity extends AppCompatActivity {
                             orderList.add(new ModelOrderdItem(name_ , cost_ ,price_ , quantity_ , pid_));
                             Log.d("recycleview", "onDataChange: "+cost_);
                         }
+                        Collections.reverse(orderList);
                         orderRV.setLayoutManager(new LinearLayoutManager(order_Details_Activity.this
                         ));
                         adapterOrderdItems =  new AdapterOrderdItems(order_Details_Activity.this,orderList);
                         //set adapter
                         orderRV.setAdapter(adapterOrderdItems);
+
                     }
 
                     @Override
