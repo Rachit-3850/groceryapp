@@ -50,7 +50,6 @@ public class edit_seller_profile_Activity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     ProgressDialog progressDialog;
 
-    private final int REQUEST_CAMERA_CODE = 100;
     private final int GALLERY_REQUEST_CODE = 200;
 
     private Uri image_uri;
@@ -105,8 +104,7 @@ public class edit_seller_profile_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showImagePickDialog();
-//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(intent,REQUEST_CAMERA_CODE);
+
             }
         });
     }
@@ -242,36 +240,11 @@ public class edit_seller_profile_Activity extends AppCompatActivity {
                                                   }
                                               }
                                           });
-//        map.put("openClose" , "true");
+
 
         }
-//        HashMap<String,Object> map = new HashMap<>();
-//        map.put("fullName",fullName);
-//        map.put("address",Adress);
-//        map.put("Country",Country);
-//        map.put("State",State);
-//        map.put("City",City);
-//        map.put("phoneNo",phoneNo);
-//        map.put("shopName",shopName);
-//        map.put("deleveryfee",deleveryfee);
-//        map.put("shopOpen",""+shopOpen);
-//
-//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-//        ref.child(firebaseAuth.getUid()).updateChildren(map)
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void unused) {
-//                        progressDialog.dismiss();
-//                        Toast.makeText(edit_seller_profile_Activity.this, "profile updated...", Toast.LENGTH_SHORT).show();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        progressDialog.dismiss();
-//                        Toast.makeText(edit_seller_profile_Activity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
+;
+
 
 
     }
@@ -339,60 +312,32 @@ public class edit_seller_profile_Activity extends AppCompatActivity {
 
     }
     private void showImagePickDialog() {
-        String[] options = {"Gallery" , "Camera"};
+        String[] options = {"Gallery" };
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Pick Image")
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if(i == 0) {
-                            //Gallery clicked
-//                            if(checkStoragePermission()){
+
                             Intent intent = new Intent(Intent.ACTION_PICK);
                             intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                             startActivityForResult(intent,GALLERY_REQUEST_CODE);
-//                            }
-//                            else {
-//                                requestStoragePermission();
-//                            }
+
                         }
-                        else {
-                            //Camera clicked
-//                            if(checkCameraPermissions()){
-//
-//                            }
-//                            else {
-//                                requestCameraPermission();
-//                            }
-                            pickFromCamera();
-//                            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                            startActivityForResult(intent,REQUEST_CAMERA_CODE);
-                        }
+
                     }
                 })
                 .show();
     }
-    private void pickFromCamera() {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(MediaStore.Images.Media.TITLE,"Temp img title");
-        contentValues.put(MediaStore.Images.Media.DESCRIPTION,"Temp img discription");
 
-        image_uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,contentValues);
-
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,image_uri);
-        startActivityForResult(intent , REQUEST_CAMERA_CODE);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == RESULT_OK) {
-            if(requestCode == REQUEST_CAMERA_CODE) {
-//                Bitmap img = (Bitmap)data.getExtras().get("data");
-                circularImageView.setImageURI(image_uri);
-            }
-            else if(requestCode == GALLERY_REQUEST_CODE) {
+
+             if(requestCode == GALLERY_REQUEST_CODE) {
                 image_uri = data.getData();
                 circularImageView.setImageURI(data.getData());
             }

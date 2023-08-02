@@ -28,14 +28,6 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(2000);
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-                finally {
-
-//                    Intent intent = new Intent(SplashActivity.this ,LoginActivity.class);
-//                    startActivity(intent);
                     FirebaseUser user = firebaseAuth.getCurrentUser();
                     if(user == null) {
                         Intent intent = new Intent(SplashActivity.this ,LoginActivity.class);
@@ -46,6 +38,9 @@ public class SplashActivity extends AppCompatActivity {
                         startActivity(intent);
                         checkUserType();
                     }
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         };thread.start();
