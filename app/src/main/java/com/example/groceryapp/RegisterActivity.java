@@ -46,11 +46,8 @@ public class RegisterActivity extends AppCompatActivity {
     Button register;
     ImageView back;
     TextView seller;
-    private final int REQUEST_CAMERA_CODE = 100;
     private final int GALLERY_REQUEST_CODE = 200;
-    private final int IMAGE_REQUEST_GALLERY_CODE = 300;
-    private final int CAMERA_REQUEST_GALLERY_CODE = 400;
-    private final int REQUEST_STORAGE_CODE = 500;
+
     CircularImageView circularImageView;
     private String[] storagePermission;
     private String[] cameraPermission;
@@ -107,8 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 inputData();
-//                Intent intent = new Intent(RegisterActivity.this, Main_user_Activity.class);
-//                startActivity(intent);
+
             }
         });
 
@@ -116,8 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showImagePickDialog();
-//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(intent,REQUEST_CAMERA_CODE);
+
             }
         });
 
@@ -304,93 +299,34 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     });
         }
-//        HashMap<String, Object> map = new HashMap<>();
-//        map.put("uid", "" + firebaseAuth.getUid());
-//        map.put("fullName", fullName);
-//        map.put("Email", Email);
-//        map.put("address", Adress);
-//        map.put("Country", Country);
-//        map.put("State", State);
-//        map.put("City", City);
-//        map.put("phoneNo", phoneNo);
-//        map.put("accountType", "User");
-//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-//        ref.child(firebaseAuth.getUid()).setValue(map)
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void unused) {
-//                        progressDialog.dismiss();
-//                        Intent intent = new Intent(RegisterActivity.this, Main_user_Activity.class);
-//                        startActivity(intent);
-//                        finish();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        progressDialog.dismiss();
-//                        Intent intent = new Intent(RegisterActivity.this, Main_user_Activity.class);
-//                        startActivity(intent);
-//                        finish();
-//                    }
-//                });
+
     }
 
     private void showImagePickDialog() {
-        String[] options = {"Gallery" , "Camera"};
+        String[] options = {"Gallery" };
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Pick Image")
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if(i == 0) {
-                            //Gallery clicked
-//                            if(checkStoragePermission()){
                             Intent intent = new Intent(Intent.ACTION_PICK);
                             intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                             startActivityForResult(intent,GALLERY_REQUEST_CODE);
-//                            }
-//                            else {
-//                                requestStoragePermission();
-//                            }
+
                         }
-                        else {
-                            //Camera clicked
-//                            if(checkCameraPermissions()){
-//
-//                            }
-//                            else {
-//                                requestCameraPermission();
-//                            }
-                            pickFromCamera();
-//                            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                            startActivityForResult(intent,REQUEST_CAMERA_CODE);
-                        }
+
                     }
                 })
                 .show();
     }
-    private void pickFromCamera() {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(MediaStore.Images.Media.TITLE,"Temp img title");
-        contentValues.put(MediaStore.Images.Media.DESCRIPTION,"Temp img discription");
 
-        image_uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,contentValues);
-
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,image_uri);
-        startActivityForResult(intent , REQUEST_CAMERA_CODE);
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == RESULT_OK) {
-            if(requestCode == REQUEST_CAMERA_CODE) {
-//                Bitmap img = (Bitmap)data.getExtras().get("data");
-                circularImageView.setImageURI(image_uri);
-            }
-            else if(requestCode == GALLERY_REQUEST_CODE) {
+            if(requestCode == GALLERY_REQUEST_CODE) {
                 image_uri = data.getData();
                 circularImageView.setImageURI(data.getData());
             }
