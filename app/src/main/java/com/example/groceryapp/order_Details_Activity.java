@@ -63,14 +63,12 @@ public class order_Details_Activity extends AppCompatActivity {
         progressDialog.setTitle("please wait");
         progressDialog.setCanceledOnTouchOutside(false);
 
-        Log.d("confirm", "onCreate: "+orderID);
-        Log.d("confirm", "onCreate: "+orderTo);
+
 
 
         loadShopInfo();
         loadOrderInfo();
-//        Log.d("orderDetails", "onCreate: "+orderby);
-//        loadOrderdItems();
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,12 +100,7 @@ public class order_Details_Activity extends AppCompatActivity {
                         String ocost = ""+snapshot.child("orderCost").getValue();
                         String cstatus = ""+snapshot.child("orderStatus").getValue();
                         String odate = ""+snapshot.child("orderTime").getValue();
-                        Log.d("orderDetails", "onDataChange: "+cstatus);
-                        Log.d("orderDetails", "onDataChange: "+ocost);
-                        Log.d("orderDetails", "onDataChange: "+odate);
-                        Log.d("orderDetails", "onDataChange: "+orderTo);
-                        Log.d("orderDetails", "onDataChange: "+orderID);
-                        Log.d("orderDetails", "onDataChange: "+orderby);
+
 //
                         String dateFormat = "dd/MM/yyyy";
                         SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);

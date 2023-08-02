@@ -37,7 +37,6 @@ public class adapterRecycleSeller extends RecyclerView.Adapter<adapterRecycleSel
         this.context = context;
         this.list = list;
         this.filterList = list;
-        Log.d("message", "adapterRecycleSeller: "+list.size());
     }
 
     @NonNull
@@ -45,7 +44,7 @@ public class adapterRecycleSeller extends RecyclerView.Adapter<adapterRecycleSel
     public HolderProductSeller onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //initialize layout
         View view = LayoutInflater.from(context).inflate(R.layout.product_design_card,parent,false);
-        Log.d("message", "onCreateViewHolder: success");
+
         return new HolderProductSeller(view);
     }
 

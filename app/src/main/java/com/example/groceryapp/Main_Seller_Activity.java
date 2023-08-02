@@ -149,13 +149,11 @@ public class Main_Seller_Activity extends AppCompatActivity {
             }
         });
 
-//        fragments(new productFragment() , 0);
 
         products.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                changeBackground(true , false);
-//                fragments(new productFragment() , 1);
+
                 showProductUI();
             }
         });
@@ -163,8 +161,7 @@ public class Main_Seller_Activity extends AppCompatActivity {
         orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                changeBackground(false , true);
-//                fragments(new ordersFragment() , 1);
+
                 showOrderUI();
             }
         });
@@ -230,7 +227,7 @@ public class Main_Seller_Activity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         ordersList.clear();
                         for(DataSnapshot ds : snapshot.getChildren()) {
-//                            ModelOrderSeller modelOrderSeller = ds.getValue(ModelOrderSeller.class);
+
                             String orderIdo = ""+ ds.child("orderId").getValue();
                             String orderByo = ""+ ds.child("orderBy").getValue();
                             String orderToo = ""+ ds.child("orderTo").getValue();
@@ -342,18 +339,7 @@ public class Main_Seller_Activity extends AppCompatActivity {
             loadMyInfo();
         }
     }
-//    public void fragments(Fragment frag, int flag) {
-//        FragmentManager fm = getSupportFragmentManager();
-//        FragmentTransaction ft = fm.beginTransaction();
-//        if(flag == 0) {
-//            ft.add(R.id.container_seller,frag);
-//        }
-//        else {
-//            ft.replace(R.id.container_seller,frag);
-//        }
-//        ft.commit();
-//    }
-//
+
     public void changeBackground(boolean a1 , boolean a2) {
         if(a1) {
             products.setBackgroundResource(R.drawable.design_product_orders_white);

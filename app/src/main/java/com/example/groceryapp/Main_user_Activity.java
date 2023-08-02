@@ -38,7 +38,7 @@ public class Main_user_Activity extends AppCompatActivity {
     ImageView editP;
     RecyclerView shopRV , orderRV;
     LinearLayout shop , order;
-//    user_profile_main
+
     CircularImageView circularImageView;
 
     ArrayList<ModelShop> shopList;
@@ -102,8 +102,7 @@ public class Main_user_Activity extends AppCompatActivity {
         shops.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                changeBackground(true , false);
-//                fragments(new productFragment() , 1);
+
                 showShopUI();
             }
         });
@@ -111,19 +110,20 @@ public class Main_user_Activity extends AppCompatActivity {
         orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                changeBackground(false , true);
-//                fragments(new ordersFragment() , 1);
+
                 showOrderUI();
             }
         });
     }
-    private void showShopUI() {shop.setVisibility(View.VISIBLE);
+    private void showShopUI() {
+        shop.setVisibility(View.VISIBLE);
         order.setVisibility(View.GONE);
         changeBackground(true , false);
     }
 
     private void showOrderUI() {
-        order.setVisibility(View.VISIBLE);shop.setVisibility(View.GONE);
+        order.setVisibility(View.VISIBLE);
+        shop.setVisibility(View.GONE);
         changeBackground(false , true);
     }
     public void changeBackground(boolean a1 , boolean a2) {
@@ -184,9 +184,9 @@ public class Main_user_Activity extends AppCompatActivity {
                                 circularImageView.setImageResource(R.drawable.user);
                             }
 
-                            //load only those shops which are in city
+
                             loadsShop(City);
-                            //
+
                             loadOrders();
                         }
                     }
@@ -208,11 +208,11 @@ public class Main_user_Activity extends AppCompatActivity {
                 orderList.clear();
                 for(DataSnapshot ds : snapshot.getChildren()) {
                     String uid = ""+ ds.getRef().getKey();
-//                    Log.d("place", "onDataChange: "+uid);
+
                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users")
                             .child(uid).child("Orders");
                     String pp = "" +ds.child("orderBy").getValue();
-//                    Log.d("problem", "onDataChange: "+firebaseAuth.getUid());
+
                     ref.orderByChild("orderBy").equalTo(firebaseAuth.getUid())
                             .addValueEventListener(new ValueEventListener() {
                                 @Override
@@ -221,8 +221,7 @@ public class Main_user_Activity extends AppCompatActivity {
                                     String uuid = ""+ snapshot.getRef().getKey();
                                     if(snapshot.exists()) {
                                         for(DataSnapshot ds : snapshot.getChildren()) {
-//                                            ModelPlaceOrder modelPlaceOrder = ds.getValue(ModelPlaceOrder.class);
-//                                            orderList.add(modelPlaceOrder);
+
 //
                                             String orderId , orderTime , orderStatus , orderCost , orderBy , orderTo;
                                             orderCost = "" +ds.child("orderCost").getValue();
@@ -231,9 +230,7 @@ public class Main_user_Activity extends AppCompatActivity {
                                             orderStatus = "" +ds.child("orderStatus").getValue();
                                             orderBy = "" +ds.child("orderBy").getValue();
                                             orderTo = "" +ds.child("orderTo").getValue();
-                                            Log.d("problem", "onDataChange: "+orderTo);
 
-                                            Log.d("placed", "onDataChange: "+orderCost);
                                             orderList.add(new ModelPlaceOrder(orderId , orderTime , orderStatus , orderCost , orderBy , orderTo));
                                         }
                                         orderRV.setLayoutManager(new LinearLayoutManager(Main_user_Activity.this
@@ -270,14 +267,10 @@ public class Main_user_Activity extends AppCompatActivity {
                         for(DataSnapshot ds : snapshot.getChildren()) {
                             ModelShop modelShop = ds.getValue(ModelShop.class);
                             String shopcity = ""+ds.child("City").getValue();
-                            //only in your city
-//                            if(shopcity.equals(City)) {
-//                                shopList.add(modelShop);
-//                            }
-                            //all the shops
+
                             shopList.add(modelShop);
 
-//                            setup adapter
+//
                             shopRV.setLayoutManager(new LinearLayoutManager(Main_user_Activity.this
                             ));
                              adapterRecycleUser =  new adapterRecycleUser(Main_user_Activity.this,shopList);
